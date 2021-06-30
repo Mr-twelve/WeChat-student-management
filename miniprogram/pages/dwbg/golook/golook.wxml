@@ -1,0 +1,21 @@
+<view class="weui-cells weui-cells_after-title">
+	<view class="weui-cell">
+		<view class="weui-cell__bd" style="font-weight:700">{{day}}位置变化统计共{{people.length}}人</view>
+	</view>
+</view>
+<view style="padding-top:20rpx">
+</view>
+<block wx:for="{{people}}">
+	<view class="weui-cell" style="background:white;margin:0rpx 25rpx 30rpx 25rpx;box-shadow:0px 6px 5px rgba(0,0,0,0.5)">
+		<view class="weui-cell__bd" style="font-family:SimHei;font-size:32rpx;">
+			<!-- <view id="{{index}}" wx:if="{{day==time&&QX!=1&QX!=2}}" bindtap="removeYS">修正</view> -->
+			<view>班级：{{item.banji}}</view>
+      <view>姓名：{{item.name}}</view>
+			<view>学号：{{item.xuehao}}</view>
+
+      <view>{{item.endtime}}{{item.endlocat}}</view>
+			<view>{{item.time}}{{item.getlocat}}</view>
+		</view>
+	</view>
+
+</block>

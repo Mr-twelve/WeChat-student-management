@@ -1,0 +1,91 @@
+<form bindsubmit="ok">
+  <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+      <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+      <view class="weui-cells__title">在校状态选择</view>
+      <view class="weui-cells weui-cells_after-title">
+        <radio-group bindchange="radioChange">
+          <label class="weui-cell weui-check__label" wx:for="{{zaixiao}}" wx:key="">
+            <radio class="weui-check" value="{{index}}" checked="{{zaixiaoindex==index}}" />
+            <view class="weui-cell__bd">{{item}}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{zaixiaoindex==index}}">
+              <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+            </view>
+          </label>
+        </radio-group>
+      </view>
+
+<block wx:if="{{zaixiaoindex!=0}}">
+      <view class="weui-cells__title">信息提交</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">手机号1</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="tell1" class="weui-input" placeholder="请输入本人手机号" />
+          </view>
+        </view>
+        <view class="weui-cell ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">手机号2</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="tell2" class="weui-input" placeholder="请输入家长手机号" />
+          </view>
+        </view>
+        <view class="weui-cell ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">离校日期</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{date1}}" start="2019-09-01" end="2022-09-01" bindchange="bindDateChange1">
+              <view class="weui-input">{{date1}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">返校日期</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{date2}}" start="{{date1}}" end="2022-09-01" bindchange="bindDateChange2">
+              <view class="weui-input">{{date2}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <textarea name="lixiaoyuanyin" class="weui-textarea" placeholder="请输入离校或请假原因" style="height: 3.3em" />
+            <view class="weui-textarea-counter">0/200</view>
+          </view>
+        </view>
+      </view>
+
+
+
+      <checkbox-group bindchange="bindAgreeChange">
+        <label class="weui-agree" for="weuiAgree">
+          <view class="weui-agree__text">
+            <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+            <view class="weui-agree__checkbox-icon">
+              <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+            </view>
+            阅读并同意
+            <navigator url="../tiaokuan/tiaokuan" class="weui-agree__link">《相关条款》</navigator>
+          </view>
+        </label>
+      </checkbox-group>
+</block>
+
+<block wx:if="{{zaixiaoindex==0&&student.ifinschool==false}}">
+  <view>销假请联系辅导员</view>
+</block>
+      <view wx:if="{{zaixiaoindex!=0}}" class="weui-btn-area">
+        <button formType="submit" class="weui-btn" type="primary">确定</button>
+      </view>
+    </view>
+  </view>
+</form>

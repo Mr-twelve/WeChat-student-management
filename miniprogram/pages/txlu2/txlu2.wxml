@@ -1,0 +1,45 @@
+<view class="page__bd" style="padding-bottom:0">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" confirm-type ='search' focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm='sousuo' />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+  </view>
+
+<block wx:if="{{inputShowed==false}}">
+<picker bindchange="bindPickerChange" value="{{aaindex}}" range="{{array}}" style="margin-top:20rpx;">
+  <button class="weui-btn" type="default">{{aaindex}}</button>
+</picker>
+
+<view class="weui-cells__title">{{banji}}</view>
+<view class="weui-cells weui-cells_after-title">
+<block wx:for="{{txlu}}" wx:key>
+  <view class="weui-cell" id="{{index}}" bindtap="telltxl">
+    <view class="weui-cell__bd">{{item.name}}</view>
+    <view class="weui-cell__ft">{{item.tell}}</view>
+  </view>
+</block>
+</view>
+</block>
+
+<block wx:if="{{inputShowed==true}}">
+<view class="weui-cells weui-cells_after-title">
+<block wx:for="{{student}}" wx:key>
+  <view class="weui-cell" id="{{index}}" bindtap="tell">
+    <view class="weui-cell__bd">{{item.name}}</view>
+    <view class="weui-cell__ft">{{item.tell}}</view>
+  </view>
+</block>
+</view>
+</block>

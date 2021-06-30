@@ -1,0 +1,104 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"nodeModules": true
+	},
+	"appid": "wxdb3d4c714b835b22",
+	"projectname": "%E6%99%BA%E6%85%A7%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0",
+	"libVersion": "2.9.4",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "学生界面",
+					"pathName": "pages/student/student",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "管理端界面",
+					"pathName": "pages/guanli/guanli",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "测试",
+					"pathName": "pages/util/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登陆界面",
+					"pathName": "example/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "相关条款",
+					"pathName": "pages/tiaokuan/tiaokuan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "班级管理",
+					"pathName": "pages/banjiguanli/banjiguanli",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "查寝",
+					"pathName": "pages/chaqin/chaqin",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

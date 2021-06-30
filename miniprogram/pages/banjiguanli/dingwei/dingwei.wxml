@@ -1,0 +1,48 @@
+<form bindsubmit="formSubmit">
+<view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">开始日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{date1}}" end="2022-09-01" bindchange="bindDateChange1">
+          <view class="weui-input">{{date1}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">开始时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="time" value="12:00" start="00:00" end="23:59" bindchange="bindTimeChange1">
+          <view class="picker">
+            {{time1}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">截止日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{date1}}" end="2022-09-01" bindchange="bindDateChange2">
+          <view class="weui-input">{{date2}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">截止时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="time" value="12:00" start="00:00" end="23:59" bindchange="bindTimeChange2">
+          <view class="picker">
+            {{time2}}
+          </view>
+        </picker>
+      </view>
+    </view>
+<button bindtap="go" formType="submit" class="weui-btn" type="primary" style="width:100%">发起班级查寝</button>
+</form>

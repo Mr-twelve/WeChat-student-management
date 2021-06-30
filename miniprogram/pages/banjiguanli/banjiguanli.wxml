@@ -1,0 +1,37 @@
+<swiper wx:if="{{ggao}}" class="swiper-container" style="height: 50rpx;" vertical='true' autoplay='true' circular='true' interval='2000' duration='500'>
+  <block wx:for="{{noticeList}}" wx:for-item="item" wx:key="*this">
+    <swiper-item>
+      <navigator url='' open-type='navigate' hover-class='none'>
+        <view class="item">{{item}}</view>
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<view class="page">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">班级活动详情</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+        <view style="display: inline-block;vertical-align:middle; font-size: 17px;" bindtap="huodong">详细信息</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">定位查寝发起</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+        <view style="display: inline-block;vertical-align:middle; font-size: 17px;" bindtap="dingwei">详细信息</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">定位查寝记录</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+        <view style="display: inline-block;vertical-align:middle; font-size: 17px;" bindtap="dingweijilu">详细信息</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,89 @@
+<form bindsubmit="ok" bindreset="formReset">
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+
+  <view class="page__bd">
+    <view class="weui-cells__title">假期去向</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+          <radio class="weui-check" value="{{index}}" checked="{{index==radioItemsindex}}" />
+
+          <view class="weui-cell__bd">{{item}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{index==radioItemsindex}}">
+            <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+          </view>
+        </label>
+      </radio-group>
+      <!-- 选择假期外出时出现输入外出地点的文本框 -->
+      <view wx:if="{{radioItemsindex==2}}" class="weui-cells weui-cells_after-title">
+        <view class="weui-cell ">
+          <view class="weui-cell__bd">
+            <input name="waichudidian" class="weui-input" placeholder="请输入外出地点" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">联系方式</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input name="tell" class="weui-input" placeholder="请输入联系方式" />
+        </view>
+      </view>
+
+      <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">离校时间</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{date1}}" start="2019-10-01" end="2022-09-01" bindchange="bindDateChange1">
+            <view class="weui-input">{{date1}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">返校时间</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{date2}}" start="{{date1}}" end="2022-09-01" bindchange="bindDateChange2">
+            <view class="weui-input">{{date2}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">家长是否知情</view>
+        <view class="weui-cell__ft">
+          <switch checked bindchange="switchChange" />
+        </view>
+      </view>
+    </view>
+
+    </view>
+    <!-- <view class="weui-cells__tips">底部说明文字底部说明文字</view> -->
+
+    <checkbox-group bindchange="bindAgreeChange">
+      <label class="weui-agree" for="weuiAgree">
+        <view class="weui-agree__text">
+          <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+          <view class="weui-agree__checkbox-icon">
+            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+          </view>
+          阅读并同意
+          <navigator url="../tiaokuan/tiaokuan" class="weui-agree__link">《相关条款》</navigator>
+        </view>
+      </label>
+    </checkbox-group>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" formType="submit">确定</button>
+    </view>
+  </view>
+</view>
+</form>

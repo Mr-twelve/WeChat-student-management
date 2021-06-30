@@ -1,0 +1,28 @@
+<view class="weui-cells__title">参加{{name}}活动学生共：{{people.length}}人
+  <text style="color:blue" bindtap="savaExcel">导出</text>
+  <view bindtap="copyFileUrl">{{fileUrl}}</view>
+</view>
+
+
+<block wx:for="{{countpeople}}" wx:key >
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell" id="{{index}}" bindtap="zhankai">
+      <view class="weui-cell__bd">{{item.name}}班</view>
+      <view class="weui-cell__ft">{{item.people}}人</view>
+    </view>
+  </view>
+  <block wx:if="{{item.zhankai==true}}" wx:for="{{people}}" wx:for-item="people" wx:key>
+    <view wx:if="{{people.banji==banji}}" class="weui-cell">
+      <view class="weui-cell__bd" style="margin-left: 50rpx;">{{people.name}}</view>
+      <view class="weui-cell__ft" style="margin-right: 50rpx;">{{people.banji}}班</view>
+    </view>
+  </block>
+</block>
+<!-- <view class="weui-cells weui-cells_after-title">
+  <block wx:for="{{people}}" wx:key>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">{{item.name}}</view>
+      <view class="weui-cell__ft">{{item.banji}}班</view>
+    </view>
+  </block>
+</view> -->

@@ -1,0 +1,16 @@
+/* miniprogram/pages/jilu/jilu.wxss */
+.quxiao{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tz{
+  -webkit-line-clamp:1000;
+  line-height:1.7;
+}
+.tz1{
+  margin-top:5px;
+  font-size: 14px; 
+  color: #525050;
+  line-height:1.7;
+}

@@ -1,0 +1,89 @@
+<form bindsubmit="formSubmit">
+  <view class="weui-cells__title">活动发起</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">举办部门</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="bumeng" class="weui-input" placeholder="请输入活动发起部门" />
+      </view>
+    </view>
+    <view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">活动名称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="name" class="weui-input" placeholder="请输入活动名称" />
+      </view>
+    </view>
+    <view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">报名日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{date1}}" start="{{date1}}" end="2022-09-01" bindchange="bindDateChange1">
+          <view class="weui-input">{{date1}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">开始时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="time" value="12:00" start="00:00" end="23:59" bindchange="bindTimeChange1">
+          <view class="picker">
+            {{time1}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">截止日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{date1}}" start="{{date1}}" end="2022-09-01" bindchange="bindDateChange2">
+          <view class="weui-input">{{date2}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">截止时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="time" value="12:00" start="00:00" end="23:59" bindchange="bindTimeChange2">
+          <view class="picker">
+            {{time2}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell pad">
+      <view class="weui-cell__hd">
+        <view class="weui-label">活动人数</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="people" type="number" class="weui-input" placeholder="请输入人数限制" />
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell pad">
+      <view class="weui-cell__bd">
+        <textarea name="neirun" class="weui-textarea" placeholder="请输入活动内容" style="height: 7.3em" />
+        <!-- <view class="weui-textarea-counter">0/200</view> -->
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__tips">活动内容应包括举办的时间、地点以及活动内容</view>
+
+  <view class="weui-btn-area">
+    <button formType="submit" class="weui-btn" type="primary">活动发布</button>
+  </view>
+</form>

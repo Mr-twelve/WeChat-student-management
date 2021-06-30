@@ -1,0 +1,57 @@
+<!-- 
+默认显示所有不在校的人
+班级选择以后显示对应班级不在校的人
+ -->
+<view class="top1">
+<picker bindchange="bindPickerChange" value="{{aaindex}}" range="{{array}}" style="margin-top:20rpx;">
+  <button class="weui-btn" type="default">{{aaindex}}</button>
+</picker>
+<picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}" style="margin-top:20rpx;">
+  <button class="weui-btn" type="default">{{index2}}</button>
+</picker>
+</view>
+<view class="top" style="margin-top:20rpx;">
+  <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;font-size:28rpx;background-color:#7FFF00;"></view>
+  <view style="display: inline-block;vertical-align:middle; font-size: 15px;">在校人数:{{total-qinjia}}</view>
+  <view class="weui-badge weui-badge_dot" style="margin-left: 15px;margin-right: 5px;font-size:28rpx;background-color:red;"></view>
+  <view style="display: inline-block;vertical-align:middle; font-size: 15px;">离校请假:{{lixiao}}</view>
+  <view class="weui-badge weui-badge_dot" style="margin-left: 15px;margin-right: 5px;font-size:28rpx;background-color:orange;"></view>
+  <view style="display: inline-block;vertical-align:middle; font-size: 15px;">在校请假:{{qinjia-lixiao}}</view>
+</view>
+<!-- <view class="weui-cells__title top" style="margin-top:10rpx;">点击头像进行预览，点击学生信息可查看离校原因</view> -->
+
+<block wx:for="{{student}}" wx:key>
+<block wx:if="{{(aaindex=='全部班级'&&index2!='在校状态')||(aaindex!='全部班级'&&item.banji==aaindex)}}">
+<block wx:if="{{(index2=='请假状态'&&item.ifinschool==false)||(index2=='在校状态'&&item.ifinschool==true)||(index2=='离校请假'&&item.newqinjia[0].zhuangtai=='离校请假')||(index2=='在校请假'&&item.newqinjia[0].zhuangtai=='在校请假')}}">
+<view class="weui-cell">
+  <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+    <image lazy-load='true' id="{{item.tximg}}" bindtap="yulan" src="{{item.tximg}}" style="width: 50px; height: 70px; display: block" />
+    <!-- <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">1</view> -->
+  </view>
+  <view class="weui-cell__bd" id="{{item._id}}" bindtap="yuanyin">
+    <view style="margin-top: 5rpx;">
+      <text style="font-size:15px;">{{item.banji}}</text>
+      <text style="margin-left:20rpx;font-size:15px;">{{item.name}}</text>
+      <text style="margin-left:20rpx;font-size:15px;" wx:if='{{item.ifinschool!=true}}'>{{item.newqinjia[0].zhuangtai}}</text>
+    </view>
+    <view style="margin-top: 5rpx;">
+      <!-- <text wx:if='{{item.ifinschool==true}}'>在校</text> -->
+      <text wx:if='{{item.ifinschool!=true}}' style="font-size:15px;">请假原因：{{item.newqinjia[0].lixiaoyuanyin}}</text>
+    </view>
+    <view style="font-size: 14px;color: #888888;margin-top: 5rpx;" wx:if='{{item.ifinschool!=true}}'>
+      <text>离校时间{{item.newqinjia[0].date1}}</text>
+      <text style="margin-left:20rpx;">返校时间{{item.newqinjia[0].date2}}</text>
+    </view>
+  </view>
+</view>
+</block>
+</block>
+</block>
+
+<block wx:if="{{(aaindex=='全部班级'&&index2=='在校状态')}}">
+<view>在线状态请分班查看</view>
+</block>
+
+
+
+

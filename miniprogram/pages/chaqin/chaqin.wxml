@@ -1,0 +1,21 @@
+<wxs module="dinwei" src="../util/dinwei.wxs" />
+<wxs module="peoplenumber" src="../util/banji-peoplenumber.wxs" />
+<picker bindchange="bindPickerChange" value="{{aaindex}}" range="{{array}}" style="margin-top:20rpx;">
+  <button class="weui-btn" type="default">{{aaindex}}</button>
+</picker>
+<view class="weui-panel">
+  <view class="weui-panel__bd">
+    <block wx:for="{{huodong}}" wx:key>
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">{{item.people.length}}/{{peoplenumber.toname(item.banji)}}人</view>
+        <view class="weui-media-box__desc tz1">举办班级：{{item.banji}}</view>
+        <view class="weui-media-box__desc tz1">开始时间：{{item.starttime}}</view>
+        <view class="weui-media-box__info tz1" style="margin-top:6px;">
+          <view class="weui-media-box__info__meta ">
+            截止时间：{{item.endtime}}</view>
+          <view id="{{item._id}}" class="weui-media-box__info__meta weui-media-box__info__meta_extra" style="color:blue;" bindtap="look">详情</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

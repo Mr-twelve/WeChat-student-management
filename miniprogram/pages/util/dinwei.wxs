@@ -1,0 +1,18 @@
+var dinwei = {
+  toname: function (value, arr) {
+    var length = arr.length
+    for (var i = 0; i <= length; i++) {
+      if (i == length) {
+        return false
+        break;
+      } else {
+        if (arr[i].id == value) {
+          return true
+        }
+      }
+    }
+  }
+}
+module.exports = {
+  toname: dinwei.toname
+}

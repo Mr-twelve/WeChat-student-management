@@ -1,0 +1,4 @@
+/* miniprogram/pages/dongtai/dongtai.wxss */
+page{
+  background: white;
+}

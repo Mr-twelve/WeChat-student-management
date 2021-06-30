@@ -1,0 +1,17 @@
+<view class="weui-panel">
+  <view class="weui-panel__hd">活动列表（参加活动{{huodong.length}}项）</view>
+
+  <view class="weui-panel__bd">
+    <block wx:for="{{huodong}}" wx:key>
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">{{item.name}}</view>
+        <view class="weui-media-box__desc">{{item.neirun}}</view>
+        <view class="weui-media-box__info">
+          <view class="weui-media-box__info__meta">{{item.bumen}}</view>
+          <view class="weui-media-box__info__meta">报名截至时间{{item.date1}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>

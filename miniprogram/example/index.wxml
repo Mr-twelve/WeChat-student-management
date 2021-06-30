@@ -1,0 +1,62 @@
+<form bindsubmit="login">
+<view class="page">
+  <view class="weui-form">
+    <view class="weui-form__text-area">
+      <!-- <view class="weui-form__title">山西农业大学</view> -->
+      <view class="weui-form__desc" style="margin-top:-30rpx;font-weight:bold;">欢迎登录软件学院学生智慧管理系统</view>
+    </view>
+    <view class="weui-form__control-area" style="margin:0;">
+    <view class="main">
+      <image style="width:350rpx;height:350rpx;margin-top:100rpx;" src="cloud://test-98bk9.7465-test-98bk9-1300497805/山西农业大学软件学院院徽.jpg"></image>
+      </view>
+      <view class="weui-cells__group weui-cells__group_form" style="margin-top:130rpx;">
+        <!-- <view class="weui-cells__title">输入框</view> -->
+        <view class="weui-cells weui-cells_form">
+          <view class="weui-cell">
+            <!-- <view class="weui-cell__hd"><label class="weui-label">学号</label></view> -->
+            <view class="weui-cell__bd">
+              <input name="xuehao" style="margin-left:220rpx;" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入学号" />
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-cells weui-cells_form">
+          <view class="weui-cell">
+            <!-- <view class="weui-cell__hd"><label class="weui-label">密码</label></view> -->
+            <view class="weui-cell__bd">
+              <input password="true" name="mima" style="margin-left:220rpx;" class="weui-input" pattern="[0-9]*" placeholder="请输入密码" />
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-form__tips-area" style="margin-top:130rpx;">
+          <label for="weuiAgree" class="weui-agree">
+            <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox" />
+            <span class="weui-agree__text">阅读并同意
+              <text style="color:#4876FF" bindtap="tiaokuan">《相关条款》</text>
+            </span>
+          </label>
+        </view>
+        <view class="weui-form__opr-area" style="margin-bottom:20rpx;">
+          <button formType="submit" type="primary">确定</button>
+        </view>
+        <view class="weui-form__tips-area">
+          <view class="weui-form__tips">
+            点击确定即表示同意相关条款
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-form__extra-area">
+      <view class="weui-footer">
+        <!-- <view class="weui-footer__links">
+            <navigator href="javascript:void(0);" class="weui-footer__link">底部链接文本</navigator>
+          </view> -->
+        <view class="weui-footer__text">Copyright © 2019 山西农业大学软件学院分团委</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+</form>

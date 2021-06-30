@@ -1,0 +1,17 @@
+{
+  "name": "npmpackage",
+  "version": "1.0.0",
+  "main": "app.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dayjs": "^1.8.17"
+  }
+}

@@ -1,0 +1,139 @@
+<view class="page">
+  <view class="page__bd" style="padding-bottom:0">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" confirm-type='search' focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm='sousuo' />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+  </view>
+
+
+  <block wx:if="{{!inputShowed}}">
+    <view class="page__bd">
+      <view class="weui-cells__title">
+        <view class="top">
+          <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;font-size:28rpx;background-color:#7FFF00;"></view>
+          <view style="display: inline-block;vertical-align:middle; font-size: 14px;">在校人数:{{total-qinjia}}</view>
+          <view class="weui-badge weui-badge_dot" style="margin-left: 15px;margin-right: 5px;font-size:28rpx;background-color:red;"></view>
+          <view style="display: inline-block;vertical-align:middle; font-size: 14px;">离校请假:{{lixiao}}</view>
+          <view class="weui-badge weui-badge_dot" style="margin-left: 15px;margin-right: 5px;font-size:28rpx;background-color:orange;"></view>
+          <view style="display: inline-block;vertical-align:middle; font-size: 14px;">在校请假:{{qinjia-lixiao}}</view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">离校学生</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0" bindtap="chakan">
+            <view style="display: inline-block;vertical-align:middle; font-size: 17px;">详细信息</view>
+            <!-- <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view> -->
+          </view>
+        </view>
+      </view>
+
+      <!-- <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd">离校信息审核</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+          <view style="display: inline-block;vertical-align:middle; font-size: 17px;">审核</view>
+          <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view>
+        </view>
+      </view>
+    </view> -->
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">假期动态表查看</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+            <view style="display: inline-block;vertical-align:middle; font-size: 17px;">详细信息</view>
+            <!-- <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view> -->
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">班级通讯录</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+            <view style="display: inline-block;vertical-align:middle; font-size: 17px;" bindtap="txlu">详细信息</view>
+            <!-- <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view> -->
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">活动发起</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+            <view style="display: inline-block;vertical-align:middle; font-size: 17px;" bindtap="faqi">详细信息</view>
+            <!-- <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view> -->
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">活动记录</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+            <view style="display: inline-block;vertical-align:middle; font-size: 17px;" bindtap="jilu">详细信息</view>
+            <!-- <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view> -->
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">查寝记录</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+            <view style="display: inline-block;vertical-align:middle; font-size: 17px;" bindtap="chaqin">详细信息</view>
+            <!-- <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view> -->
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">位置变更</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+            <view style="display: inline-block;vertical-align:middle; font-size: 17px;" bindtap="dwbg">详细信息</view>
+            <!-- <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view> -->
+          </view>
+        </view>
+      </view>
+      
+      
+    </view>
+  </block>
+  <block wx:if="{{inputShowed}}" wx:for="{{student}}" wx:key>
+    <view class="weui-cell">
+      <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+        <image id="{{item.tximg}}" bindtap="yulan" src="{{item.tximg}}" style="width: 50px; height: 50px; display: block" />
+        <!-- <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">1</view> -->
+      </view>
+      <view class="weui-cell__bd" id="{{item._id}}" bindtap="yuanyin">
+        <view style="margin-top: 10rpx;">
+          <text>{{item.name}}</text>
+          <text style="margin-left:20rpx;">{{item.xuehao}}</text>
+        </view>
+        <view wx:if="{{item.ifinschool==false}}" style="font-size: 13px;color: #888888;margin-top: 10rpx;">
+          <text>离校时间{{item.newqinjia[0].date1}}</text>
+          <text style="margin-left:20rpx;">返校时间{{item.newqinjia[0].date2}}</text>
+        </view>
+        <view wx:if="{{item.ifinschool!=false}}" style="font-size: 13px;color: #888888;margin-top: 10rpx;">
+          <text>在校</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

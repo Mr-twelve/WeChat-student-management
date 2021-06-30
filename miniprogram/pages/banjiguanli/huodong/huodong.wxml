@@ -1,0 +1,18 @@
+<view class="weui-panel">
+      <view class="weui-panel__hd">活动列表</view>
+      <view class="weui-panel__bd">
+      <block wx:for="{{huodong}}" wx:key>
+        <view class="weui-media-box weui-media-box_text">
+        <view class="quxiao">
+          <view class="weui-media-box__title weui-media-box__title_in-text">{{item.name}}（{{item.havepeople.length}}/{{item.maxpeople}}人）</view>
+          </view>
+          <view class="weui-media-box__desc tz">{{item.neirun}}</view>
+          <view class="weui-media-box__desc tz1 ">举办部门：{{item.bumen}}</view>
+          <view class="weui-media-box__info tz1">
+            <view class="weui-media-box__info__meta">报名截止时间：{{item.date2}}</view>
+            <view id="{{item._id}}" class="weui-media-box__info__meta weui-media-box__info__meta_extra" style="color:green;" bindtap="xuesheng">参加学生</view>
+          </view>
+        </view>
+        </block>
+      </view>
+    </view>

@@ -1,0 +1,53 @@
+<view class="weui-cells__title">{{huambiao.length}}人未参与定位，{{nopeople}}人未在宿舍</view>
+
+<!-- <view wx:if="{{caozuo}}" class="weui-cell">
+  <view class="weui-cell__bd" style="margin-right: 50rpx;">班团操作记录</view>
+  <view wx:if="{{caozuosousuo==false}}" class="weui-cell__ft" style="margin-left: 50rpx;color:red;" bindtap="zhankaicaozuo">展开</view>
+  <view wx:if="{{caozuosousuo!=false}}" class="weui-cell__ft" style="margin-left: 50rpx;color:red;" bindtap="hidecaozuo">收起</view>
+</view>
+<view wx:if="{{caozuosousuo!=false}}" class="weui-cell" style="display:inline;padding: 0px;">
+  <view style="margin-left: 40rpx;" wx:for="{{caozuo}}">
+    {{item}}
+  </view>
+</view> -->
+<!-- bindchange 删掉//// -->
+<!-- bindchange 删掉//// -->
+<!-- bindchange 删掉//// -->
+<!-- bindchange 删掉//// -->
+<!-- bindchange 删掉//// -->
+<!-- bindchange 删掉//// -->
+<!-- bindchange 删掉//// -->
+<!-- bindchange 删掉//// -->
+<block wx:for="{{people}}" wx:for-item="people" wx:key>
+	<view class="weui-cell" style="color:{{people.YC?'red':'blank'}}">
+		<view id="{{index}}" bindchange="bindPickerChange" range="{{array}}" class="weui-cell__bd" style="margin-right: 50rpx;">{{people.name}}</view>
+		<view id="{{index}}" class="weui-cell__ft" bindtap="chakandinwei" style="margin-left: 50rpx;">{{people.getlocat}}</view>
+		<!-- <view wx:if="{{people.fiinschool==false}}" id="{{index}}" class="weui-cell__ft" style="margin-left: 50rpx;color:red;" bindtap="chakandinwei">未在宿舍</view>
+    <view wx:if="{{people.fiinschool!=false}}" class="weui-cell__ft" style="margin-left: 50rpx;">在宿舍</view> -->
+	</view>
+	<view class="weui-cell" style="position: static;padding-top:0;color:red" wx:if="{{people.YC}}">
+		<view id="{{index}}" bindchange="bindPickerChange" range="{{array}}" class="weui-cell__bd" style="margin-right: 50rpx;">上次定位</view>
+		<view id="{{index}}" class="weui-cell__ft" bindtap="chakandinwei" style="margin-left: 50rpx;">{{people.endtime}}-{{people.endlocat}}</view>
+	</view>
+</block>
+<view class="weui-cells__title">未参与定位</view>
+<block wx:for="{{huambiao}}" wx:for-item="people" wx:key>
+	<view class="weui-cell">
+		<view id="{{index}}" bindchange="bindPickerChange1" range="{{array}}" class="weui-cell__bd" style="margin-right: 50rpx;">{{people}}</view>
+	</view>
+</block>
+
+
+<!-- <block wx:for="{{people}}" wx:for-item="people" wx:key>
+  <view class="weui-cell">
+    <picker id="{{index}}" bindchange="bindPickerChange" range="{{array}}" class="weui-cell__bd" style="margin-right: 50rpx;">{{people.name}}</picker>
+    <view wx:if="{{people.fiinschool==false}}" id="{{index}}" class="weui-cell__ft" style="margin-left: 50rpx;color:red;" bindtap="chakandinwei">未在宿舍</view>
+    <view wx:if="{{people.fiinschool!=false}}" class="weui-cell__ft" style="margin-left: 50rpx;">在宿舍</view>
+  </view>
+</block>
+<view class="weui-cells__title">未参与定位</view>
+<block wx:for="{{huambiao}}" wx:for-item="people" wx:key>
+  <view class="weui-cell">
+    <picker id="{{index}}" bindchange="bindPickerChange1" range="{{array}}" class="weui-cell__bd" style="margin-right: 50rpx;">{{people}}</picker>
+  </view>
+</block> -->

@@ -1,0 +1,14 @@
+<view class="weui-cells weui-cells_after-title">
+	<view class="weui-cell">
+		<view class="weui-cell__bd" style="font-weight:700">位置变化统计</view>
+	</view>
+</view>
+<view style="padding-top:20rpx">
+</view>
+<block wx:for="{{day}}">
+	<view id="{{item}}" bindtap="golook" class="weui-cell" style="background:white;margin:0rpx 25rpx 30rpx 25rpx;box-shadow:0px 6px 5px rgba(0,0,0,0.5)">
+		<view class="weui-cell__bd" style="font-family:SimHei;font-size:32rpx;">
+			<view>{{item}}</view>
+		</view>
+	</view>
+</block>

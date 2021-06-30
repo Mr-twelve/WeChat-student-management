@@ -1,0 +1,11 @@
+<view class="map_container">
+  <map class='map' longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}' polygon="{{polygon}}" show-location></map>
+</view>
+ 
+<view>
+<button style="background-color: white;width:90%;color:black;font-size: 50rpx;" class="weui-btn" type="primary">{{getlocat}}</button>
+<button wx:if="{{ok==1}}" bindtap="go" class="weui-btn" type="primary" style="margin-top:100rpx;">上传位置信息</button>
+<button wx:if="{{ok==2}}" class="weui-btn" type="primary" style="margin-top:100rpx;">上传位置信息中</button>
+
+
+</view>

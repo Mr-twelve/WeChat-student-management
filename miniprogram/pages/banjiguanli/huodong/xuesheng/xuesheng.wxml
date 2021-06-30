@@ -1,0 +1,16 @@
+<view class="weui-cells__title">参加{{name}}活动学生</view>
+
+
+
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">{{banji}}班</view>
+    <view class="weui-cell__ft">{{countpeople}}人</view>
+  </view>
+</view>
+<block wx:for="{{people}}" wx:for-item="people" wx:key>
+  <view wx:if="{{people.banji==banji}}" class="weui-cell">
+    <view class="weui-cell__bd" style="margin-left: 50rpx;">{{people.name}}</view>
+    <view class="weui-cell__ft" style="margin-right: 50rpx;">{{people.banji}}班</view>
+  </view>
+</block>

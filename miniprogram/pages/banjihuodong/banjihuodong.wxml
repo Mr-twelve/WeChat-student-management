@@ -1,0 +1,24 @@
+<wxs module="dinwei" src="../util/dinwei.wxs" />
+<wxs module="numberdinwei" src="../util/banji-peoplenumber.wxs" />
+<view></view>
+<view class="weui-panel">
+  <view class="weui-panel__bd">
+    <block wx:for="{{huodong}}" wx:key>
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">{{item.people.length}}/{{numberdinwei.toname(item.banji)}}人</view>
+        <view class="weui-media-box__desc tz1">举办班级：{{item.banji}}</view>
+        <view class="weui-media-box__desc tz1">开始时间：{{item.starttime}}</view>
+        <view class="weui-media-box__info tz1" style="margin-top:6px;">
+          <view class="weui-media-box__info__meta ">
+            截止时间：{{item.endtime}}</view>
+            <view id="{{index}}" wx:if='{{!dinwei.toname(myid,item.people)&&date<item.starttime}}' class="weui-media-box__info__meta weui-media-box__info__meta_extra" style="color:green;">未开始</view>
+          <view id="{{item._id}}" wx:if='{{!dinwei.toname(myid,item.people)&&date<=item.endtime&&date>=item.starttime}}' class="weui-media-box__info__meta weui-media-box__info__meta_extra" style="color:green;" bindtap="okk">参加</view>
+          <view id="{{item._id}}" wx:if='{{dinwei.toname(myid,item.people)&&date<=item.endtime&&date>=item.starttime}}' class="weui-media-box__info__meta weui-media-box__info__meta_extra" style="color:green;">已参加</view>
+          <view id="{{index}}" wx:if='{{date>item.endtime}}' class="weui-media-box__info__meta weui-media-box__info__meta_extra" style="color:red;">已结束</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+

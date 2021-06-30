@@ -1,0 +1,8 @@
+<view class="map_container">
+  <map class='map' longitude='{{longitude}}' latitude='{{latitude}}' scale='14' markers='{{markers}}' show-location></map>
+</view>
+ 
+<view>
+<view style="align:center;font-size:48rpx">{{name}}定位时所在位置</view>
+<view style="align:center;font-size:48rpx">{{lationname}}</view>
+</view>

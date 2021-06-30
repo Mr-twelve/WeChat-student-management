@@ -1,0 +1,4 @@
+/* miniprogram/pages/zaixiao/zaixiao.wxss */
+page{
+  background: white;
+}

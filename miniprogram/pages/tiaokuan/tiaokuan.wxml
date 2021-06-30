@@ -1,0 +1,35 @@
+<view class="page">
+  
+    <view class="page__bd">
+        <view class="weui-article">
+            <!-- <view class="weui-article__h1">大标题</view> -->
+            <view class="weui-article__section">
+                <view class="weui-article__h2" style="text-align:center;">相关条款</view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">一、“遇见小软”平台简介</view>
+                    <view class="weui-article__p">
+                        1.1“遇见小软”微信小程序是依托山西农业大学软件学院大学生学生创业平台而创建，依靠学院软件设计的自身优势，研发的专业化智能学生管理系统。
+                    </view>
+                    <view class="weui-article__p">
+                        1.2“遇见小软”平台将服务于老师、同学的日常工作，包括：发布活动信息、假期动态管理、请销假以及奖惩信息管理。
+                    </view>
+                    <view class="weui-article__p">
+                        1.3“遇见小软”平台着力打造安全性高、可靠性好、服务便捷、使用灵活的管理系统，创新更加智能化的学生管理方式，努力成为智慧校园小帮手。
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">二、“遇见小软”管理方法</view>
+                    <view class="weui-article__p">
+                        2.1信息管理方法：平台由软件学院统一管理，保证做到活动信息准确、个人信息安全；学生保证做到个人信息准确、状态更新及时。请同学们如实填写个人状态，学院将根据状态信息进行学生管理，本人在校情况应与状态信息高度一致，一经查实，严肃处理。
+                    </view>
+                    <view class="weui-article__p">
+                        2.2请假管理办法：学生应严格遵守《山西农业大学学生请销假管理方法》，请假三天以内，由辅导员批准；三天以上一周以内由分团委书记批准；一周以上由学院领导批准，并报学生处备案。严格做到离校请假、返校销假。
+                    </view>
+                    <view class="weui-article__p">
+                        2.3住宿管理规定：严禁学生校外居住、夜不归宿。学生应当在学校提供的宿舍内居住，凡违反《学生校外居住管理实施细则》的学生，依照《学生违纪处分实施细则》给予相应纪律处分。
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

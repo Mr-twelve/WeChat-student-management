@@ -1,0 +1,4 @@
+/* miniprogram/pages/jiangcheng/jiangcheng.wxss */
+page{
+  background: white;
+}

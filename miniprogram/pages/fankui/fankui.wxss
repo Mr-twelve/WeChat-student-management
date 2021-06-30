@@ -1,0 +1,4 @@
+/* miniprogram/pages/fankui/fankui.wxss */
+page{
+  background: white;
+}

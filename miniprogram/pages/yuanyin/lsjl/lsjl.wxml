@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title"></view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{student.tximg}}" style="width: 75px; height: 105px; display: block" />
+
+        </view>
+        <view class="weui-cell__bd">
+          <view>{{student.name}}</view>
+          <view>{{student.xuehao}}</view>
+          <view>{{student.banji}}班</view>
+        </view>
+      </view>
+
+      <view class="top1">
+        <button class="weui-btn" bindtap="qinjia" style="margin-top:0;width:150px;" type="default">请假记录</button>
+        <button class="weui-btn" bindtap="huodong" style="margin-top:0;width:150px;" type="default">活动记录</button>
+      </view>
+
+
+      <block wx:if="{{tabbar==0}}" wx:for="{{qinjia}}" wx:key>
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <view style="margin-top: 10rpx;">
+              <text>{{item.lixiaoyuanyin}}</text>
+            </view>
+            <view style="margin-top: 10rpx;">
+              <text>{{item.tell1}}</text>
+              <text style="margin-left:20rpx;">{{item.tell2}}</text>
+            </view>
+            <view style="margin-top: 10rpx;">
+              <text wx:if="{{item.fanxiaotime!=null}}">{{item.fanxiaotime}}</text>
+              <text style="color:red" wx:if="{{item.fanxiaotime==null}}">当前未返校</text>
+            </view>
+            <view style="font-size: 13px;color: #888888;margin-top: 10rpx;">
+              <text>离校时间{{item.date1}}</text>
+              <text style="margin-left:20rpx;">返校时间{{item.date2}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{tabbar==1}}" wx:for="{{huodong}}" wx:key>
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text">{{item.name}}</view>
+          <view class="weui-media-box__desc">{{item.neirun}}</view>
+          <view class="weui-media-box__info">
+            <view class="weui-media-box__info__meta">{{item.bumen}}</view>
+            <view class="weui-media-box__info__meta">报名截至时间{{item.date1}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
